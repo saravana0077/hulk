@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Search</title>
+  <title>Search Box</title>
+
+  <!-- jQuery (REQUIRED) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,14 +32,40 @@
 </head>
 <body>
 
-  <form action="https://getform.io/f/bzyqyjqa" method="POST">
-    <input 
-      type="text" 
-      name="search_query" 
-      placeholder="Search here..." 
-      required>
+  <!-- Search Form -->
+  <form id="ajaxForm" action="https://getform.io/f/bzyqyjqa" method="POST">
+    <input
+      type="text"
+      name="search_query"
+      placeholder="Search here..."
+      required
+    >
     <button type="submit">Search</button>
   </form>
+
+  <!-- YOUR SCRIPT (UNCHANGED) -->
+  <script>
+    $("#ajaxForm").submit(function(e){
+        e.preventDefault();
+        var action = $(this).attr("action");
+        $.ajax({
+          type: "POST",
+          url: action,
+          crossDomain: true,
+          data: new FormData(this),
+          dataType: "json",
+          processData: false,
+          contentType: false,
+          headers: {
+            "Accept": "application/json"
+          }
+        }).done(function() {
+          alert('The form was submitted successfully.');
+        }).fail(function() {
+          alert('An error occurred! Please try again later.');
+        });
+    });
+  </script>
 
 </body>
 </html>
