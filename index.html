@@ -1,73 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Input Search Box</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<style>
-body {
-font-family: Arial, sans-serif;
-background: #f4f6f8;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-}
-
-
-.search-box {
-background: #fff;
-padding: 20px;
-border-radius: 12px;
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-display: flex;
-gap: 10px;
-}
-
-
-input[type="text"] {
-width: 260px;
-padding: 12px;
-font-size: 16px;
-border-radius: 8px;
-border: 1px solid #ccc;
-outline: none;
-}
-
-
-button {
-padding: 12px 18px;
-font-size: 16px;
-border-radius: 8px;
-border: none;
-background: #007bff;
-color: white;
-cursor: pointer;
-}
-
-
-button:hover {
-background: #0056b3;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-
-<!--
-This form sends whatever the user types
-to a third‑party service (Formspree)
--->
-<form class="search-box" action="https://formspree.io/f/xyzzabcd" method="POST">
-<input
-type="text"
-name="user_input"
-placeholder="Search here..."
-required
-/>
-<button type="submit">Search</button>
-</form>
-
+  <form action="https://getform.io/f/bzyqyjqa" method="POST">
+    <input 
+      type="text" 
+      name="search_query" 
+      placeholder="Search here..." 
+      required>
+    <button type="submit">Search</button>
+  </form>
 
 </body>
 </html>
